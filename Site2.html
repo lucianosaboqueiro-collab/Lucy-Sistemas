@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucy Systems | Sites e Sistemas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7ff;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #101b4d, #1769e0);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header .logo {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .whatsapp-top {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 25px;
+            background: #20c968;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .whatsapp-top:hover {
+            background: #16a957;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 45px 20px 25px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            color: #101b4d;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            color: #596579;
+        }
+
+        .pacotes {
+            max-width: 1150px;
+            margin: 25px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 22px;
+            box-shadow: 0 8px 25px rgba(20, 40, 90, 0.10);
+            border: 2px solid transparent;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #1769e0;
+        }
+
+        .destaque {
+            border-color: #1769e0;
+        }
+
+        .tag {
+            position: absolute;
+            top: -13px;
+            right: 18px;
+            background: #1769e0;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            color: #101b4d;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .preco {
+            font-size: 27px;
+            font-weight: bold;
+            color: #1769e0;
+            margin: 15px 0;
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 18px 0;
+        }
+
+        .card li {
+            margin: 9px 0;
+            font-size: 14px;
+        }
+
+        .card li::before {
+            content: "✓";
+            color: #20b866;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #1769e0;
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #0d4fae;
+        }
+
+        .sobre {
+            background: #101b4d;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .sobre h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .sobre p {
+            max-width: 750px;
+            margin: auto;
+            color: #dce5ff;
+        }
+
+        .servicos {
+            max-width: 950px;
+            margin: 45px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .servicos h2 {
+            color: #101b4d;
+            margin-bottom: 25px;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .servico {
+            background: white;
+            padding: 22px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+        .servico span {
+            font-size: 30px;
+        }
+
+        .contacto {
+            text-align: center;
+            background: #e8f0ff;
+            padding: 50px 20px;
+        }
+
+        .contacto h2 {
+            color: #101b4d;
+            margin-bottom: 10px;
+        }
+
+        .contacto p {
+            margin-bottom: 20px;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            background: #20c968;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        footer {
+            background: #080f2e;
+            color: #b9c4df;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+            header .logo {
+                font-size: 32px;
+            }
+
+            header {
+                padding: 40px 15px;
+            }
+
+            .intro h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">LUCY SYSTEMS</div>
+
+    <p>
+        Sites e sistemas simples, modernos e personalizados
+        para empresas, lojas, negócios, escolas e empreendedores.
+    </p>
+
+    <a class="whatsapp-top"
+       href="https://wa.me/244959785229?text=Olá%20Lucy%20Systems,%20quero%20saber%20mais%20sobre%20os%20pacotes."
+       target="_blank">
+        💬 Falar no WhatsApp
+    </a>
+</header>
+
+
+<section class="intro">
+    <h2>Escolha o seu pacote</h2>
+    <p>
+        Temos soluções para diferentes tipos de negócios e necessidades.
+    </p>
+</section>
+
+
+<section class="pacotes">
+
+    <!-- PACOTE 1 -->
+    <div class="card">
+        <h3>🥉 Pacote Básico</h3>
+
+        <div class="preco">10.000 Kz</div>
+
+        <p>Para quem precisa de uma presença digital simples.</p>
+
+        <ul>
+            <li>Site em HTML</li>
+            <li>Design simples e bonito</li>
+            <li>Informações do negócio</li>
+            <li>Botão do WhatsApp</li>
+            <li>Link para acesso ao site</li>
+        </ul>
+
+        <a class="btn"
+           href="https://wa.me/244959785229?text=Olá,%20tenho%20interesse%20no%20Pacote%20Básico%20de%2010.000%20Kz."
+           target="_blank">
+            Quero este pacote
+        </a>
+    </div>
+
+
+    <!-- PACOTE 2 -->
+    <div class="card">
+        <h3>🥈 Pacote Profissional</h3>
+
+        <div class="preco">15.000 Kz</div>
+
+        <p>Para negócios que querem um site mais completo.</p>
+
+        <ul>
+            <li>Tudo do pacote Básico</li>
+            <li>Interface mais profissional</li>
+            <li>Várias secções</li>
+            <li>Catálogo de produtos</li>
+            <li>Botões de contacto</li>
+            <li>Link personalizado</li>
+        </ul>
+
+        <a class="btn"
+           href="https://wa.me/244959785229?text=Olá,%20tenho%20interesse%20no%20Pacote%20Profissional%20de%2015.000%20Kz."
+           target="_blank">
+            Quero este pacote
+        </a>
+    </div>
+
+
+    <!-- PACOTE 3 -->
+    <div class="card destaque">
+        <div class="tag">MAIS PEDIDO</div>
+
+        <h3>🥇 Pacote Premium</h3>
+
+        <div class="preco">20.000 Kz</div>
+
+        <p>Uma solução mais completa para empresas e negócios.</p>
+
+        <ul>
+            <li>Tudo do Profissional</li>
+            <li>Design premium</li>
+            <li>Página de serviços</li>
+            <li>Catálogo organizado</li>
+            <li>Área de contacto</li>
+            <li>Botões para redes sociais</li>
+            <li>Publicação do site</li>
+        </ul>
+
+        <a class="btn"
+           href="https://wa.me/244959785229?text=Olá,%20tenho%20interesse%20no%20Pacote%20Premium%20de%2020.000%20Kz."
+           target="_blank">
+            Quero este pacote
+        </a>
+    </div>
+
+
+    <!-- PACOTE 4 -->
+    <div class="card">
+        <h3>💎 Pacote Business</h3>
+
+        <div class="preco">30.000 Kz</div>
+
+        <p>Para negócios que precisam de um sistema personalizado.</p>
+
+        <ul>
+            <li>Site personalizado</li>
+            <li>Sistema em HTML</li>
+            <li>Cadastro de informações</li>
+            <li>Organização de dados</li>
+            <li>Calculadoras e ferramentas</li>
+            <li>Interface profissional</li>
+            <li>Link online</li>
+        </ul>
+
+        <a class="btn"
+           href="https://wa.me/244959785229?text=Olá,%20tenho%20interesse%20no%20Pacote%20Business%20de%2030.000%20Kz."
+           target="_blank">
+            Quero este pacote
+        </a>
+    </div>
+
+
+    <!-- PACOTE 5 -->
+    <div class="card">
+        <div class="tag">COMPLETO</div>
+
+        <h3>🚀 Pacote Enterprise</h3>
+
+        <div class="preco">50.000 Kz</div>
+
+        <p>Para projetos maiores e sistemas personalizados.</p>
+
+        <ul>
+            <li>Sistema completo personalizado</li>
+            <li>Design moderno</li>
+            <li>Várias áreas e funcionalidades</li>
+            <li>Formulários</li>
+            <li>Calculadoras</li>
+            <li>Gestão de informações</li>
+            <li>Botões de contacto</li>
+            <li>Publicação online</li>
+            <li>Personalização conforme o negócio</li>
+        </ul>
+
+        <a class="btn"
+           href="https://wa.me/244959785229?text=Olá,%20tenho%20interesse%20no%20Pacote%20Enterprise%20de%2050.000%20Kz."
+           target="_blank">
+            Quero este pacote
+        </a>
+    </div>
+
+</section>
+
+
+<section class="sobre">
+
+    <h2>💻 Transforme a sua ideia em um sistema</h2>
+
+    <p>
+        Criamos sites e sistemas personalizados para diferentes tipos
+        de negócios. Se você tem uma ideia, fale connosco e podemos
+        desenvolver uma solução de acordo com as suas necessidades.
+    </p>
+
+</section>
+
+
+<section class="servicos">
+
+    <h2>O que podemos criar?</h2>
+
+    <div class="servicos-grid">
+
+        <div class="servico">
+            <span>🌐</span>
+            <h3>Sites</h3>
+            <p>Sites profissionais para negócios.</p>
+        </div>
+
+        <div class="servico">
+            <span>📊</span>
+            <h3>Sistemas</h3>
+            <p>Sistemas personalizados para empresas.</p>
+        </div>
+
+        <div class="servico">
+            <span>🧮</span>
+            <h3>Calculadoras</h3>
+            <p>Ferramentas de cálculo personalizadas.</p>
+        </div>
+
+        <div class="servico">
+            <span>📚</span>
+            <h3>Sistemas escolares</h3>
+            <p>Soluções para escolas e estudantes.</p>
+        </div>
+
+        <div class="servico">
+            <span>🏪</span>
+            <h3>Negócios</h3>
+            <p>Sistemas para lojas e empresas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contacto">
+
+    <h2>📱 Quer criar o seu site ou sistema?</h2>
+
+    <p>
+        Entre em contacto agora pelo WhatsApp.
+    </p>
+
+    <a class="whatsapp"
+       href="https://wa.me/244959785229?text=Olá,%20quero%20criar%20um%20site%20ou%20sistema."
+       target="_blank">
+        💬 959 785 229 — Falar agora
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 Lucy Systems — Sites e Sistemas Digitais
+</footer>
+
+</body>
+</html>
